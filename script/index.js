@@ -1,162 +1,164 @@
 console.log(document)
 
 
-function getElementById(id) {
+function getElementById(id) {  //id input niye element return kore de
     const element = document.getElementById(id);
     return element;
 }
-document.getElementById("cart-btn-1").addEventListener("click", function () {
-    const title = document.getElementById("card-title-1").innerText;
-    const price = document.getElementById("card-price-1").innerText;
-    //total price ke dorbo
 
-    const totalPrice = document.getElementById("total-price").innerText
+//traditional way of adding event listener--------------->>>
+// document.getElementById("cart-btn-1").addEventListener("click", function () {
+//     const title = document.getElementById("card-title-1").innerText;
+//     const price = document.getElementById("card-price-1").innerText;
+//     //total price ke dorbo
 
-    //calculate 
-    currentTotal = Number(price) + Number(totalPrice);
-    //update 
-    getElementById("total-price").innerText = currentTotal.toFixed(2);
+//     const totalPrice = document.getElementById("total-price").innerText
 
-    //card-container
-    const cardContainer = document.getElementById("card-container")
+//     //calculate 
+//     currentTotal = Number(price) + Number(totalPrice);
+//     //update 
+//     getElementById("total-price").innerText = currentTotal.toFixed(2);
 
-    // akta div banao
-    const newCard = document.createElement("div")
-    newCard.innerHTML = `
-         <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
-         <img src="./assets/kitchen-1.png" alt="" class="w-8">
-         <div class="">
-        <h2 class="font-bold">${title}</h2>
-        <h2 class="">${price} Tk</h2>
-     </div>
- </div>
-      `;
+//     //card-container
+//     const cardContainer = document.getElementById("card-container")
 
-    //card container a add korte hobe
-    cardContainer.append(newCard)
+//     // akta div banao
+//     const newCard = document.createElement("div")
+//     newCard.innerHTML = `
+//          <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
+//          <img src="./assets/kitchen-1.png" alt="" class="w-8">
+//          <div class="">
+//         <h2 class="font-bold">${title}</h2>
+//         <h2 class="">${price} Tk</h2>
+//      </div>
+//  </div>
+//       `;
 
-
-});
-
-
-document.getElementById("card-btn-2").addEventListener("click", function () {
-    const title = document.getElementById("card-title-2").innerText
-    const price = document.getElementById("card-price-2").innerText
-    //1. total price ke dorbo
-    const totalPrice = document.getElementById("total-price").innerText
-
-    //2. add korbo
-    currentTotal = Number(price) + Number(totalPrice);
-
-    //update korbo
-    getElementById("total-price").innerText = currentTotal
-
-    // card container ke dorbo
-    const cardContainer = document.getElementById("card-container");
+//     //card container a add korte hobe
+//     cardContainer.append(newCard)
 
 
-    const newCard = document.createElement("div")
-    newCard.innerHTML = `
-         <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
-         <img src="./assets/kitchen-2.png" alt="" class="w-8">
-         <div class="">
-        <h2 class="font-bold">${title}</h2>
-        <h2 class="">${price} Tk</h2>
-     </div>
- </div>
-      `;
-
-    cardContainer.append(newCard)
-})
+// });
 
 
+// document.getElementById("card-btn-2").addEventListener("click", function () {
+//     const title = document.getElementById("card-title-2").innerText
+//     const price = document.getElementById("card-price-2").innerText
+//     //1. total price ke dorbo
+//     const totalPrice = document.getElementById("total-price").innerText
 
-document.getElementById("card-btn-3").addEventListener("click", function () {
-    const title = document.getElementById("card-title-3").innerText
-    // 1. element ke dorbo
-    const price = document.getElementById("card-price-3").innerText
+//     //2. add korbo
+//     currentTotal = Number(price) + Number(totalPrice);
 
-    //1.1total price ke darbo
+//     //update korbo
+//     getElementById("total-price").innerText = currentTotal
 
-    const totalPrice = document.getElementById("total-price").innerText
-
-    //add korbo
-
-    currentPrice = Number(price) + Number(totalPrice);
-
-    //update korbo
-
-    getElementById("total-price").innerText = currentPrice;
-
-    // card container k dakbo
-    const cardContainer = document.getElementById("card-container")
-
-    const newCard = document.createElement("div")  //create element by id------>
-    newCard.innerHTML = `
-    <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
-         <img src="./assets/kitchen-3.png" alt="" class="w-8">
-         <div class="">
-        <h2 class="font-bold">${title}</h2>
-        <h2 class="">${price} Tk</h2>
-     </div>
- </div>
- `
-
-    cardContainer.append(newCard);
-})
+//     // card container ke dorbo
+//     const cardContainer = document.getElementById("card-container");
 
 
-document.getElementById("card-btn-4").addEventListener("click", function () {
-    const title = document.getElementById("card-title-4").innerText
-    const price = document.getElementById("card-price-4").innerText
+//     const newCard = document.createElement("div")
+//     newCard.innerHTML = `
+//          <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
+//          <img src="./assets/kitchen-2.png" alt="" class="w-8">
+//          <div class="">
+//         <h2 class="font-bold">${title}</h2>
+//         <h2 class="">${price} Tk</h2>
+//      </div>
+//  </div>
+//       `;
 
-    const totalPrice = document.getElementById("total-price").innerText
-
-    currentTotal = Number(price) + Number(totalPrice);
-
-    getElementById("total-price").innerText = currentTotal;
-
-    const cardContainer = document.getElementById("card-container")
-
-    const newCard = document.createElement("div")
-    newCard.innerHTML = ` 
-    <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
-         <img src="./assets/furniture-1.png" alt="" class="w-8">
-         <div class="">
-        <h2 class="font-bold">${title}</h2>
-        <h2 class="">${price} Tk</h2>
-     </div>
- </div>`
-
-    cardContainer.append(newCard);
-
-})
+//     cardContainer.append(newCard)
+// })
 
 
-document.getElementById("card-btn-5").addEventListener("click", function () {
-    const title = document.getElementById("card-title-5").innerText
-    const price = document.getElementById("card-price-5").innerText
 
-    const totalPrice = document.getElementById("total-price").innerText
+// document.getElementById("card-btn-3").addEventListener("click", function () {
+//     const title = document.getElementById("card-title-3").innerText
+//     // 1. element ke dorbo
+//     const price = document.getElementById("card-price-3").innerText
 
-    currentTotal = Number(price) + Number(totalPrice)
+//     //1.1total price ke darbo
 
-    getElementById("total-price").innerText = currentTotal
+//     const totalPrice = document.getElementById("total-price").innerText
 
-    const cardContainer = document.getElementById("card-container")
+//     //add korbo
 
-    const newCard = document.createElement("div")
-    newCard.innerHTML = `
-     <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
-         <img src="./assets/furniture-2.png" alt="" class="w-8">
-         <div class="">
-        <h2 class="font-bold">${title}</h2>
-        <h2 class="">${price} Tk</h2>
-     </div>
- </div>`
+//     currentPrice = Number(price) + Number(totalPrice);
 
-    cardContainer.append(newCard);
-})
+//     //update korbo
+
+//     getElementById("total-price").innerText = currentPrice;
+
+//     // card container k dakbo
+//     const cardContainer = document.getElementById("card-container")
+
+//     const newCard = document.createElement("div")  //create element by id------>
+//     newCard.innerHTML = `
+//     <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
+//          <img src="./assets/kitchen-3.png" alt="" class="w-8">
+//          <div class="">
+//         <h2 class="font-bold">${title}</h2>
+//         <h2 class="">${price} Tk</h2>
+//      </div>
+//  </div>
+//  `
+
+//     cardContainer.append(newCard);
+// })
+
+
+// document.getElementById("card-btn-4").addEventListener("click", function () {
+//     const title = document.getElementById("card-title-4").innerText
+//     const price = document.getElementById("card-price-4").innerText
+
+//     const totalPrice = document.getElementById("total-price").innerText
+
+//     currentTotal = Number(price) + Number(totalPrice);
+
+//     getElementById("total-price").innerText = currentTotal;
+
+//     const cardContainer = document.getElementById("card-container")
+
+//     const newCard = document.createElement("div")
+//     newCard.innerHTML = ` 
+//     <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
+//          <img src="./assets/furniture-1.png" alt="" class="w-8">
+//          <div class="">
+//         <h2 class="font-bold">${title}</h2>
+//         <h2 class="">${price} Tk</h2>
+//      </div>
+//  </div>`
+
+//     cardContainer.append(newCard);
+
+// })
+
+
+// document.getElementById("card-btn-5").addEventListener("click", function () {
+//     const title = document.getElementById("card-title-5").innerText
+//     const price = document.getElementById("card-price-5").innerText
+
+//     const totalPrice = document.getElementById("total-price").innerText
+
+//     currentTotal = Number(price) + Number(totalPrice)
+
+//     getElementById("total-price").innerText = currentTotal
+
+//     const cardContainer = document.getElementById("card-container")
+
+//     const newCard = document.createElement("div")
+//     newCard.innerHTML = `
+//      <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
+//          <img src="./assets/furniture-2.png" alt="" class="w-8">
+//          <div class="">
+//         <h2 class="font-bold">${title}</h2>
+//         <h2 class="">${price} Tk</h2>
+//      </div>
+//  </div>`
+
+//     cardContainer.append(newCard);
+// })
 
 
 
@@ -204,3 +206,76 @@ document.getElementById("card-btn-5").addEventListener("click", function () {
 //         img.src="https://upload.wikimedia.org/wikipedia/commons/c/ce/MrBeast_2023_%28cropped%29.jpg"
 //     })
 // }
+
+
+//dynamic rules
+//Traverse technic------------->>################################
+
+
+//1.catch the class
+const cardBtn = document.getElementsByClassName("card-btn")
+//console.log(cardBtn)
+
+//2.for loop
+for (let cardButton of cardBtn) {
+
+
+    //3. add event listener
+    cardButton.addEventListener("click", function () {
+
+        const productImg =
+            //1.1catch the image
+            cardButton.parentNode.parentNode.parentNode.children[0].children[0].src;
+        console.log(productImg);
+
+
+        //1.2catch the title
+        const productTitle = cardButton.parentNode.parentNode.children[0].innerText;
+
+        console.log(productTitle);
+        //catch the price
+
+        //1.3 catch the title
+        const productPrice = cardButton.parentNode.parentNode.children[2].children[0].innerText;
+
+        console.log(productPrice);
+
+        //2.1call the total price
+        const totalPrice = document.getElementById("total-price").innerText
+   
+        //2.2 add 
+        const currentTotal = Number(productPrice) + Number(totalPrice);
+
+        //2.3 update 
+        document.getElementById("total-price").innerText = currentTotal;
+
+
+        const cardContainer = getElementById("card-container");
+
+        const newCart = document.createElement("div");
+        newCart.innerHTML = `
+     <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
+         <img src="${productImg}" alt="" class="w-8">
+         <div class="">
+        <h2 class="font-bold">${productTitle}</h2>
+        <h2 class="">${productPrice} Tk</h2>
+     </div>
+ </div>`;
+
+        cardContainer.append(newCart);
+
+        // call the function
+        const quantity = document.getElementById("total-quantity").innerText
+
+        //add and sum
+        const currentQuantity = Number(quantity) + 1;
+
+        //update data
+        document.getElementById("total-quantity").innerText = currentQuantity;
+
+
+    });
+
+
+}
+
