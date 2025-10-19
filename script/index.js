@@ -279,3 +279,8 @@ for (let cardButton of cardBtn) {
 
 }
 
+const clearBtn = document.getElementById("btn-clear").addEventListener("click", function(){
+    const cardContainer = getElementById("card-container");
+      cardContainer.innerHTML = " ";
+})
+
