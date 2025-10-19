@@ -208,24 +208,14 @@ function getElementById(id) {  //id input niye element return kore de
 // }
 
 
-//dynamic rules
-//Traverse technic------------->>################################
+//event  delegation concept -----###################################
 
+document.getElementById("product-box").addEventListener("click", function(e){
+            if(e.target.className.includes("card-btn")){
+                const cardButton = e.target;
 
-//1.catch the class
-const cardBtn = document.getElementsByClassName("card-btn")
-//console.log(cardBtn)
-
-//2.for loop
-for (let cardButton of cardBtn) {
-
-
-    //3. add event listener
-    cardButton.addEventListener("click", function () {
-
-        const productImg =
-            //1.1catch the image
-            cardButton.parentNode.parentNode.parentNode.children[0].children[0].src;
+         const productImg =
+         cardButton.parentNode.parentNode.parentNode.children[0].children[0].src;
         console.log(productImg);
 
 
@@ -240,14 +230,15 @@ for (let cardButton of cardBtn) {
 
         console.log(productPrice);
 
+
+
         //2.1call the total price
         const totalPrice = document.getElementById("total-price").innerText
-   
         //2.2 add 
         const currentTotal = Number(productPrice) + Number(totalPrice);
-
         //2.3 update 
         document.getElementById("total-price").innerText = currentTotal;
+
 
 
         const cardContainer = getElementById("card-container");
@@ -272,17 +263,84 @@ for (let cardButton of cardBtn) {
 
         //update data
         document.getElementById("total-quantity").innerText = currentQuantity;
+            }
+});
+ 
+//dynamic rules
+//Traverse technic------------->>################################
 
 
-    });
+//1.catch the class
+// const cardBtn = document.getElementsByClassName("card-btn")
+// //console.log(cardBtn)
+
+// //2.for loop
+// for (let cardButton of cardBtn) {
 
 
-}
+//     //3. add event listener
+//     cardButton.addEventListener("click", function () {
 
-const clearBtn = document.getElementById("btn-clear").addEventListener("click", function(){
-    const cardContainer = getElementById("card-container");
-      cardContainer.innerHTML = " ";
-       document.getElementById("total-quantity").innerText = 0;
-        document.getElementById("total-price").innerText = 0;
-})
+//         const productImg =
+//             //1.1catch the image
+//             cardButton.parentNode.parentNode.parentNode.children[0].children[0].src;
+//         console.log(productImg);
+
+
+//         //1.2catch the title
+//         const productTitle = cardButton.parentNode.parentNode.children[0].innerText;
+
+//         console.log(productTitle);
+//         //catch the price
+
+//         //1.3 catch the title
+//         const productPrice = cardButton.parentNode.parentNode.children[2].children[0].innerText;
+
+//         console.log(productPrice);
+
+//         //2.1call the total price
+//         const totalPrice = document.getElementById("total-price").innerText
+   
+//         //2.2 add 
+//         const currentTotal = Number(productPrice) + Number(totalPrice);
+
+//         //2.3 update 
+//         document.getElementById("total-price").innerText = currentTotal;
+
+
+//         const cardContainer = getElementById("card-container");
+
+//         const newCart = document.createElement("div");
+//         newCart.innerHTML = `
+//      <div class="m-5 rounded-sm bg-gray-200 flex justify-between p-2">
+//          <img src="${productImg}" alt="" class="w-8">
+//          <div class="">
+//         <h2 class="font-bold">${productTitle}</h2>
+//         <h2 class="">${productPrice} Tk</h2>
+//      </div>
+//  </div>`;
+
+//         cardContainer.append(newCart);
+
+//         // call the function
+//         const quantity = document.getElementById("total-quantity").innerText
+
+//         //add and sum
+//         const currentQuantity = Number(quantity) + 1;
+
+//         //update data
+//         document.getElementById("total-quantity").innerText = currentQuantity;
+
+
+//     });
+
+
+// }
+
+// const clearBtn = document.getElementById("btn-clear").addEventListener("click", function(){
+//     const cardContainer = getElementById("card-container");
+//       cardContainer.innerHTML = " ";
+//        document.getElementById("total-quantity").innerText = 0;
+//         document.getElementById("total-price").innerText = 0;
+// })
 
