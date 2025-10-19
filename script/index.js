@@ -337,10 +337,10 @@ document.getElementById("product-box").addEventListener("click", function(e){
 
 // }
 
-// const clearBtn = document.getElementById("btn-clear").addEventListener("click", function(){
-//     const cardContainer = getElementById("card-container");
-//       cardContainer.innerHTML = " ";
-//        document.getElementById("total-quantity").innerText = 0;
-//         document.getElementById("total-price").innerText = 0;
-// })
+const clearBtn = document.getElementById("btn-clear").addEventListener("click", function(){
+    const cardContainer = getElementById("card-container");
+      cardContainer.innerHTML = " ";
+       document.getElementById("total-quantity").innerText = 0;
+        document.getElementById("total-price").innerText = 0;
+})
 
